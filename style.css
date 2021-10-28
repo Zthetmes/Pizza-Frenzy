@@ -1,0 +1,491 @@
+@font-face{
+  font-family: SpaceRave;
+  src: url(img/SpaceRave.ttf);
+}
+
+/*:root{
+  --header-height: 3rem;
+
+  --first-color: #FCA4A6;
+  --first-color-dark: #C1576A;
+  --first-color-darken: #A83E51;
+  --white-color: #FCF8F8;
+  
+  /*===== Font and typography =====*/
+  /*--body-font: 'Prompt', sans-serif;
+  --big-font-size: 2.5rem;
+  --normal-font-size: .938rem;
+  
+  /*===== z index =====*/
+  /*--z-fixed: 100;*/
+
+
+@media screen and (min-width: 768px){
+  :root{
+    --big-font-size: 5rem;
+    --normal-font-size: 1rem;
+  }
+}
+
+/*===== BASE =====*/
+*,::before,::after{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 3rem 0 0 0;
+  padding: 0;
+  font-family: 'Prompt', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  
+ 
+}
+
+h1,p,ul{
+  margin: 0;
+}
+
+ul{
+  padding: 0;
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  font-size: 1.3rem;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+}
+
+  
+
+
+/*===== LAYOUT =====*/
+.bd-grid{
+  max-width: 1024px;
+  display: grid;
+  grid-template-columns: 100%;
+  column-gap: 2rem;
+  width: calc(100% - 2rem);
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.l-header{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: #de2121;
+
+}
+
+
+/*===== NAV =====*/
+.nav{
+  height: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+@media screen and (max-width: 768px){
+  .nav__menu{
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100%;
+    padding: 3.5rem 1.5rem 0;
+    background: rgba(255,255,255,.3);
+    backdrop-filter: blur(10px);
+    transition: .5s;
+  }
+  .dropdown.active{
+    display: flex;
+    flex-direction: column;
+    transform: translateY(-130px);
+
+    
+  }
+  .ingredientes{
+    text-align: center;
+
+  }
+  .ingredientes #tituloPizza{
+    transform: translateY(-180px);
+ 
+  }
+  .ingredientes #ingredientesPizza{
+    transform: translateY(-220px);
+  }
+  .dropdown.active li{
+    margin: .5rem;
+  }
+  .espacioImagen{
+    display: none;
+    height: 50%;
+    
+  }
+ 
+h1.home__title{
+  font-size: 2.3rem;
+}
+ .ingredientes{
+   font-size: 0.5rem;
+ } 
+ .foot li{
+  display: none;
+}
+
+.redes{
+  margin-left:auto;
+  margin-right:auto;
+  gap: 15vw;
+}
+}
+
+.nav__close{
+  position: absolute;
+  top: .75rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.nav__item{
+  margin-bottom: 2rem;
+}
+
+.nav__close, .nav__link, .nav__logo, .nav__toggle{
+  color: #fafafa;
+}
+
+.nav__link:hover{
+  color: #F78812;
+}
+.nav__logo img{
+  height: 3.5rem;
+  width: auto;
+}
+.nav__toggle{
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+
+.show{
+  right: 0;
+}
+
+
+.home{
+  background-color: #fafafa;
+  overflow: hidden;
+  background-image: url("img/fondomantel2.png");
+  background-size: cover;
+ 
+}
+
+.home__container{
+  height: calc(100vh - 3rem);
+  grid-template-rows: repeat(2, 2fr);
+  row-gap: 1.5rem;
+}
+
+.home__img{
+  position: relative;
+  padding-top: 1.5rem;
+  justify-self: center;
+  align-self: center;
+  width: 302px;
+  height: 233px;
+  
+}
+.espacioImagen{
+  position:relative;
+  display: block;
+  width: 302px;
+  height: 300px;
+}
+
+
+.home__img img{
+  position: absolute;
+  top: -50px;
+  left: 0;
+}
+i{
+  color:white;
+  padding-inline: 0.3rem;
+}
+#smoke{
+  z-index: 10;
+}
+.home__data{
+  color: #51050F;
+}
+
+.home__title{
+  font-size:4rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.home__description{
+  margin-bottom: 2.5rem;
+}
+
+.home__button{
+  display: inline-block;
+  background-color: #F78812;
+  color: #fafafa;
+  padding: 1.125rem 2rem;
+  border-radius: .5rem;
+}
+
+.home__button:hover{
+  background-color: #AB6D23;
+}
+.dropdown{
+  display:none;
+}
+.dropdown.active{
+  position: absolute;
+  display: flex;
+  margin: 1.3rem 1rem;
+  gap: 0.5rem;
+  right: 0;
+  background: rgba(255, 153, 1, 0.4);
+  backdrop-filter: blur(5px);
+  padding: 15px 35px;
+  text-align: center;
+  max-width: calc(100vw - 2rem);
+  transition: .2s;
+  border-radius: 18px;
+  
+}
+.dropdown.active li{
+  cursor: pointer;
+}
+.dropdown li{
+  width: 125px;
+
+}
+.ingredientes{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  
+
+}
+#tituloPizza{
+  font-size: 2rem;
+  letter-spacing: 2px;
+  font-weight: 400;
+  font-family: SpaceRave;
+  color: #de2121;
+  border: 3px dotted #F78812;
+  padding: 2px;
+  border-radius: 18px;
+ 
+}
+#ingredientesPizza{
+  font-size: 1.2rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+
+footer{
+  position:fixed;
+  bottom:0;
+  height:50px;
+  width:100vw;
+  background-color: #fafafa;
+  border-top: 2px solid #de2121;
+  display: flex;
+
+ flex-direction:row;
+
+ font-size: 1rem;
+ color: #de2121;
+ align-items: center;
+ justify-content: space-around;
+}
+.foot{
+  display: flex;
+  flex-direction: row;
+  color:#de2121;
+  font-size: 1.5rem;
+  gap: 2rem;
+}
+.foot i{
+  color:black;
+}
+
+.redes{
+  display: flex;
+  flex-direction: row;
+  font-size: 1.5rem;
+  gap: 2rem;
+
+}
+.fa-facebook-f{
+  color:#3b5998;
+  
+}
+.fa-twitter{
+  color:#00acee;
+  
+}
+.fa-instagram{
+  color:#ca4f5f;
+  
+}
+.nav__list #contacto :hover::before{
+  position:absolute;
+  content: '8650-4006';
+  width: 200px;
+  height: 35px;
+  background-color: #fafafa;
+  transform: translateY(48px);
+  border: 3px solid #de2121;
+  border-radius: 18px;
+  z-index : 20;
+  text-align: center;
+  align-content: center;
+  bottom: -3px;
+  left: -25px;
+  transition: 1s ease-in;
+  
+  
+
+
+}
+/* ===== MEDIA QUERIES =====*/
+@media screen and (min-width: 768px){
+  body{
+    margin: 0;
+  }
+  
+  .nav{
+    height: 4rem;
+  }
+
+  .nav__toggle, .nav__close{
+    display: none;
+  }
+
+  .nav__list{
+    display: flex;
+  }
+
+  .nav__item{
+    margin-left: 3rem;
+    margin-bottom: 0;
+  }
+
+  .home__container{
+    height: 100vh;
+    grid-template-columns: repeat(2, max-content);
+    grid-template-rows:  1fr;
+    row-gap: 0;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .home__img{
+    order: 1;
+    width: 375px;
+    height: 289px;
+  }
+  
+
+  .home__img img{
+    width: 375px;
+    
+  }
+}
+
+@media screen and (min-width: 1024px){
+  .bd-grid{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .home__container{
+    justify-content: initial;
+    column-gap:15vw;
+  }
+
+  .home__img{
+    width: 604px;
+    height: 466px;
+  }
+
+  .home__img img{
+    width: 604px;
+  }
+ 
+}
+@media screen and (max-width: 570px){
+  #ingredientesPizza{
+    display: none;
+  }
+  #tituloPizza{
+    font-size: 1.7rem;
+  }
+  .redes #textoRedes{
+    display: none;
+  }
+  .redes{
+    margin-left:auto;
+    margin-right:auto;
+    gap: 15vw;
+  }
+  .redes #textoRedes{
+    display: none;
+  }
+  .home__button{
+    padding: 0.8rem 2rem;
+  }
+  .home__description{
+    margin-bottom: 0;
+  }
+}
+  @media screen and (max-width: 1024px){
+  #ingredientesPizza{
+    font-size: 1rem;
+    transform: translateY(-70px);
+  }
+  #tituloPizza{
+    font-size: 1.7rem;
+    transform: translateY(-50px);
+  }
+.dropdown.active{
+  transform: translateY(1px);
+
+}
+}
+@media screen and (max-width: 321px){
+.home__description{
+  margin-bottom: 0;
+}
+.home__title{
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+.home__button{
+  padding: 0.8rem 2rem;
+}
+#tituloPizza{
+  margin-top: 10px;
+}
+}
